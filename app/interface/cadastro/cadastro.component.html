@@ -1,0 +1,85 @@
+<div class="modal">
+  <div class="content large">
+    <div class="back-button">
+      <a href="#" (click)="Retorna()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path d="M14.41 7.41L13 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+        Voltar
+      </a>
+    </div>
+
+    <form class="container" autocomplete="off" [formGroup]="elementForm">
+      <div class="body">
+        <div class="fields-header">
+          <div class="flex-container">
+            <div class="grid-container">
+              <label for="titulo">Título <span>*</span></label>
+              <input
+                type="text"
+                id="titulo"
+                formControlName="titulo"
+                placeholder="Digite o título"
+                maxlength="100"
+                required
+              />
+            </div>
+
+            <div class="grid-container">
+              <label for="autor">Autor </label>
+              <input
+                type="text"
+                formControlName="autor"
+                id="autor"
+                placeholder="Digite o nome do autor"
+                maxlength="100"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="flex-container">
+            <div class="grid-container">
+              <label for="genero">Gênero </label>
+              <input
+                type="text"
+                id="genero"
+                formControlName="genero"
+                placeholder="Digite o nome do gênero"
+                maxlength="100"
+                required
+              />
+            </div>
+
+            <div class="grid-container">
+              <label for="ano">Ano </label>
+              <input
+                type="text"
+                id="ano"
+                formControlName="ano"
+                placeholder="Digite o ano"
+                maxlength="4"
+                pattern="\d{4}"
+                title="Digite um ano válido (apenas números)"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button id="btnNovoCadastro" type="button" (click)="Insert()">
+            <span class="material-icons">done</span>
+            <span>Gravar</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="interface" id="lista">
+  <div class="modal">
+    <div class="content large">
+      <!-- HEADER -->
+      <div class="header">
+        <h2>Lista de Livros</h2>
+      </div>
+      <!-- BODY -->
+      <div class="body">
+        <!-- Botão para Novo Cadastro -->
+        <div class="button-container">
+          <button id="btnNovoCadastro" (click)="OpenNew()">
+            Novo Cadastro
+          </button>
+        </div>
+        <div *ngIf="itens.length > 0">
+          <!-- Tabela de Livros -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Título</th>
+                  <th>Autor</th>
+                  <th>Genero</th>
+                  <th>Ano</th>
+                  <th>Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let item of itens; index as i">
+                  <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.titulo }}</td>
+                    <td>{{ item.autor }}</td>
+                    <td>{{ item.genero }}</td>
+                    <td>{{ item.ano }}</td>
+                    <td (click)="Edit(i)">
+                      <span class="material-icons">edit</span>
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="form-sa-cadastro" style="display: none">
+  <app-cadastro
+    class="app-component"
+    [formLista]="groupLista"
+    (callParent)="CreateForm()"
+  >
+  </app-cadastro>
+</div>

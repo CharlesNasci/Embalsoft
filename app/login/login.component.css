@@ -1,0 +1,100 @@
+.login-bg {
+  background: linear-gradient(
+    125deg,
+    var(--secondary) 0%,
+    var(--secondary) 65%,
+    var(--bg-color-a) 65%,
+    var(--bg-color-a) 85%,
+    var(--bg-color-b) 85%,
+    var(--bg-color-b) 100%
+  );
+  position: fixed;
+  display: grid;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+}
+.login-interface {
+  position: relative;
+  max-width: 400px;
+  max-height: 400px;
+  width: 70%;
+  margin: auto;
+  background-color: var(--secondary);
+  border-radius: 5px;
+  border: 1px solid var(--grey-2);
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  overflow: hidden;
+}
+.login-interface.loading {
+  max-height: 300px;
+  max-width: 300px;
+}
+.login-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  color: var(--theme);
+}
+.logo {
+  display: block;
+  min-width: 100px;
+  max-width: 220px;
+  transition: max-width 1s ease;
+  margin: 0px auto;
+}
+.logo-container {
+  display: grid;
+  align-items: center;
+  margin-top: 15px;
+  max-height: 160px;
+}
+.esqueci-senha {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 15px;
+  text-decoration: underline;
+  color: var(--theme);
+}
+.login-button-container {
+  display: flex;
+  justify-content: center;
+  margin-block: 20px;
+}
+.login-error-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: red;
+}
+.footer {
+  margin-bottom: 20px;
+  width: 100%;
+  display: grid;
+  align-items: flex-end;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 800px) {
+  .logo {
+    display: block;
+    min-width: 100px;
+    max-width: 180px;
+    margin: 0px auto;
+    transition: max-width 1s ease;
+  }
+}
